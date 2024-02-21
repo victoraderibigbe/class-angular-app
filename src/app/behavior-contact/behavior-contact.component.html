@@ -1,0 +1,184 @@
+<div>
+  <form [formGroup]="contactform">
+    <div class="my-3">
+      <label for="firstname" class="font-semibold">First Name</label>
+      <input
+        type="text"
+        placeholder="e.g., John"
+        class="w-full h-16 rounded-lg"
+        formControlName="firstname"
+        [class.form-valid]="
+          contactform.get('firstname')?.valid &&
+          contactform.get('firstname')?.dirty &&
+          contactform.get('firstname')?.touched
+        "
+        [class.form-invalid]="
+          contactform.get('firstname')?.invalid &&
+          contactform.get('firstname')?.dirty &&
+          contactform.get('firstname')?.touched
+        "
+      />
+      <div
+        *ngIf="
+          contactform.get('firstname')?.invalid &&
+          contactform.get('firstname')?.touched
+        "
+      >
+        <span
+          class="text-red-500"
+          *ngIf="contactform.get('firstname')?.errors?.['required']"
+        >
+          This field must not be empty
+        </span>
+      </div>
+    </div>
+
+    <div class="my-3">
+      <label for="lastname" class="font-semibold">Last Name</label>
+      <input
+        type="text"
+        placeholder="e.g., Doe"
+        class="w-full h-16 rounded-lg"
+        formControlName="lastname"
+        [class.form-valid]="
+          contactform.get('lastname')?.valid &&
+          contactform.get('lastname')?.dirty &&
+          contactform.get('lastname')?.touched
+        "
+        [class.form-invalid]="
+          contactform.get('lastname')?.invalid &&
+          contactform.get('lastname')?.dirty &&
+          contactform.get('lastname')?.touched
+        "
+      />
+      <div
+        *ngIf="
+          contactform.get('lastname')?.invalid &&
+          contactform.get('lastname')?.touched
+        "
+      >
+        <span
+          class="text-red-500"
+          *ngIf="contactform.get('lastname')?.errors?.['required']"
+        >
+          This field must not be empty
+        </span>
+      </div>
+    </div>
+
+    <div class="my-3">
+      <label for="phonenumber" class="font-semibold">Phone Number</label>
+      <input
+        type="text"
+        placeholder="e.g., +234904745679"
+        class="w-full h-16 rounded-lg"
+        formControlName="phonenumber"
+        [class.form-valid]="
+          contactform.get('phonenumber')?.valid &&
+          contactform.get('phonenumber')?.dirty &&
+          contactform.get('phonenumber')?.touched
+        "
+        [class.form-invalid]="
+          contactform.get('phonenumber')?.invalid &&
+          contactform.get('phonenumber')?.dirty &&
+          contactform.get('phonenumber')?.touched
+        "
+      />
+      <div
+        *ngIf="
+          contactform.get('phonenumber')?.invalid &&
+          contactform.get('phonenumber')?.touched
+        "
+      >
+        <span
+          class="text-red-500"
+          *ngIf="contactform.get('phonenumber')?.errors?.['required']"
+        >
+          This field must not be empty
+        </span>
+      </div>
+    </div>
+
+    <div class="my-3">
+      <label for="email" class="font-semibold">Email</label>
+      <input
+        type="text"
+        placeholder="example@gmail.com"
+        class="w-full h-16 rounded-lg"
+        formControlName="email"
+        [class.form-valid]="
+          contactform.get('email')?.valid &&
+          contactform.get('email')?.dirty &&
+          contactform.get('email')?.touched
+        "
+        [class.form-invalid]="
+          contactform.get('email')?.invalid &&
+          contactform.get('email')?.dirty &&
+          contactform.get('email')?.touched
+        "
+      />
+      <div
+        *ngIf="
+          contactform.get('email')?.invalid && contactform.get('email')?.touched
+        "
+      >
+        <span
+          class="text-red-500"
+          *ngIf="contactform.get('email')?.errors?.['required']"
+        >
+          This field must not be empty
+        </span>
+        <span
+          class="text-red-500"
+          *ngIf="contactform.get('email')?.errors?.['maxlength']"
+        >
+          Must not be more than 20 characters
+        </span>
+        <span
+          class="text-red-500"
+          *ngIf="contactform.get('email')?.errors?.['email']"
+        >
+          Must be an email
+        </span>
+      </div>
+    </div>
+
+    <div class="my-3">
+      <label for="address" class="font-semibold">Redential Address</label>
+      <input
+        type="text"
+        placeholder="e.g., No 2, Omifunfun street, Ilupeju"
+        class="w-full h-16 rounded-lg"
+        formControlName="address"
+      />
+    </div>
+
+    <div class="my-3">
+      <label for="birthday" class="font-semibold">Birthday</label>
+      <input
+        type="date"
+        class="w-full h-16 rounded-lg"
+        formControlName="birthday"
+      />
+    </div>
+
+    <div class="my-3">
+      <label for="profession" class="font-semibold">Profession</label>
+      <input
+        type="text"
+        placeholder="e.g., Software Engineer"
+        class="w-full h-16 rounded-lg"
+        formControlName="profession"
+      />
+    </div>
+
+    <div class="my-3">
+      <button
+        class="w-full h-16 text-lg font-semibold text-white transition bg-blue-700 rounded-lg hover:bg-blue-900"
+        (click)="addContact()"
+      >
+        Add Contact
+      </button>
+    </div>
+  </form>
+</div>

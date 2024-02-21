@@ -1,0 +1,78 @@
+<div class="grid w-full grid-cols-2 mx-auto mt-5 shadow-lg md:p-10 md:mt-10 P-5">
+  <div class="col-span-2 p-5 md:col-span-1">
+    <h1 class="text-5xl font-semibold text-center underline text-slate-800">
+      Contact Form
+    </h1>
+    <input
+      type="text"
+      class="{{ this.formInputStyle }}"
+      [(ngModel)]="first_name"
+      placeholder="First Name"
+    />
+    <input
+      type="text"
+      class="{{ this.formInputStyle }}"
+      [(ngModel)]="last_name"
+      placeholder="Last Name"
+    />
+    <input
+      type="text"
+      class="{{ this.formInputStyle }}"
+      [(ngModel)]="email"
+      placeholder="Email"
+    />
+    <input
+      type="text"
+      class="{{ this.formInputStyle }}"
+      [(ngModel)]="phone_number"
+      placeholder="Phone Number"
+    />
+    <input
+      type="text"
+      class="{{ this.formInputStyle }}"
+      [(ngModel)]="address"
+      placeholder="Address"
+    />
+    <input
+      type="text"
+      class="{{ this.formInputStyle }}"
+      [(ngModel)]="gender"
+      placeholder="Gender"
+    />
+    <button (click)="addContact()" class="{{ formBtnStyle }}">Add</button>
+  </div>
+
+  <div class="col-span-2 p-5 md:col-span-1">
+    <div class="w-full mx-auto md:w-2/5">
+      <h1 class="mb-5 text-5xl font-semibold text-center underline text-slate-800">
+        Contact List
+      </h1>
+      <div class="mb-5" *ngFor="let user of contactArray; let i = index">
+        <div class="mb-2">
+          <span class="mr-2 text-2xl font-semibold">{{ i + 1 }}.</span>
+          <span class="text-2xl">{{ user.firstname }}</span>
+        </div>
+        <div class="flex items-center justify-between">
+          <button
+            class="px-3 py-2 mr-4 font-semibold text-white transition bg-blue-600 rounded-lg hover:opacity-80"
+            routerLink='/contact/{{i}}'
+          >
+            View
+          </button>
+          <button
+            class="px-3 py-2 mr-4 font-semibold text-white transition bg-yellow-500 rounded-lg hover:opacity-80"
+            (click)="edit(i)"
+          >
+            Edit
+          </button>
+          <button
+            class="px-3 py-2 mr-4 font-semibold text-white transition bg-red-600 rounded-lg hover:opacity-80"
+            (click)="del(i)"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

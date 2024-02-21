@@ -1,0 +1,11 @@
+.formstyle {
+    border: 2px solid green;
+    color: green;
+    width: 100%;
+}
+
+.formstyles {
+    border: 2px solid red !important;
+    color: red !important;
+    width: 100%;
+}

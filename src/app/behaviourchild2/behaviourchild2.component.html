@@ -1,0 +1,129 @@
+<div>
+  <div class="p-5">
+    <div>
+      <div class="my-2">
+        <span class="mr-2 text-lg font-semibold md:text-xl">First Name:</span>
+        <span class="text-lg md:text-xl">{{ behavior_obj.firstname }}</span>
+      </div>
+      <div *ngIf="openEdit">
+        <input
+          type="text"
+          class="w-full h-16 my-5 rounded-lg"
+          [(ngModel)]="this.behavior_obj.firstname"
+        />
+      </div>
+    </div>
+
+    <div>
+      <div class="my-2">
+        <span class="mr-2 text-lg font-semibold md:text-xl">Last Name:</span>
+        <span class="text-lg md:text-xl">{{ behavior_obj.lastname }}</span>
+      </div>
+      <div *ngIf="openEdit">
+        <input
+          type="text"
+          class="w-full h-16 my-5 rounded-lg"
+          [(ngModel)]="this.behavior_obj.lastname"
+        />
+      </div>
+    </div>
+
+    <div>
+      <div class="my-2">
+        <span class="mr-2 text-lg font-semibold md:text-xl">Phone Number:</span>
+        <span class="text-lg md:text-xl">{{ behavior_obj.phonenumber }}</span>
+      </div>
+      <div *ngIf="openEdit">
+        <input
+          type="text"
+          class="w-full h-16 my-5 rounded-lg"
+          [(ngModel)]="this.behavior_obj.phonenumber"
+        />
+      </div>
+    </div>
+
+    <div class="my-2">
+      <div>
+        <span class="mr-2 text-lg font-semibold md:text-xl">Email:</span>
+        <span class="text-lg md:text-xl">{{ behavior_obj.email }}</span>
+      </div>
+      <div *ngIf="openEdit">
+        <input
+          type="text"
+          class="w-full h-16 my-5 rounded-lg"
+          [(ngModel)]="this.behavior_obj.email"
+        />
+      </div>
+    </div>
+
+    <div class="my-2">
+      <div>
+        <div>
+          <span class="mr-2 text-lg font-semibold md:text-xl">Address:</span>
+          <span class="text-lg md:text-xl">{{ behavior_obj.address }}</span>
+        </div>
+        <div *ngIf="openEdit">
+          <input
+            type="text"
+            class="w-full h-16 my-5 rounded-lg"
+            [(ngModel)]="this.behavior_obj.address"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="my-2">
+      <div>
+        <div>
+          <span class="mr-2 text-lg font-semibold md:text-xl">Date of Birth:</span>
+          <span class="text-lg md:text-xl">{{ behavior_obj.birthday }}</span>
+        </div>
+        <div *ngIf="openEdit">
+          <input
+            type="text"
+            class="w-full h-16 my-5 rounded-lg"
+            [(ngModel)]="this.behavior_obj.birthday"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="my-2">
+      <div>
+        <div>
+          <span class="mr-2 text-lg font-semibold md:text-xl">Profession:</span>
+          <span class="text-lg md:text-xl">{{ behavior_obj.profession }}</span>
+        </div>
+        <div *ngIf="openEdit">
+          <input
+            type="text"
+            class="w-full h-16 my-5 rounded-lg"
+            [(ngModel)]="this.behavior_obj.profession"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <button
+        *ngIf="openEdit"
+        class="w-full h-16 my-2 text-lg font-semibold text-white transition bg-yellow-300 rounded-lg hover:bg-yellow-400"
+        (click)="update()"
+      >
+        Update
+      </button>
+      <button
+        *ngIf="!openEdit"
+        class="w-full h-16 my-2 text-lg font-semibold text-white transition bg-yellow-300 rounded-lg hover:bg-yellow-400"
+        (click)="openEditFunc()"
+      >
+        Edit Profile
+      </button>
+      <button
+        class="w-full h-16 my-2 text-lg font-semibold text-white transition bg-red-600 rounded-lg hover:bg-red-800"
+      >
+        Delete Profile
+      </button>
+    </div>
+  </div>
+</div>

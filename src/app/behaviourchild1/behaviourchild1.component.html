@@ -1,0 +1,9 @@
+<div>
+  <div *ngFor="let list of this.allContacts" (click)="sendList(list)">
+    <div
+      class="p-5 my-10 transition rounded-lg shadow-lg cursor-pointer hover:bg-gray-100"
+    >
+      <p class="text-lg md:text-2xl">{{ list.firstname }}</p>
+    </div>
+  </div>
+</div>

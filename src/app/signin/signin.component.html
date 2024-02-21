@@ -1,0 +1,19 @@
+<div class="w-full p-5 mx-auto shadow-lg md:w-2/4">
+  <h3 class="mb-5 text-3xl font-semibold text-center underline text-slate-800">
+    Sign In Page
+  </h3>
+  <div class="text-xl text-center text-red-500">{{ message }}</div>
+  <input
+    type="text"
+    placeholder="Email"
+    class="{{ formInputStyle }}"
+    [(ngModel)]="email"
+  />
+  <input
+    type="text"
+    placeholder="Password"
+    class="{{ formInputStyle }}"
+    [(ngModel)]="password"
+  />
+  <button (click)="login()" class="{{ formBtnStyle }}">Login</button>
+</div>

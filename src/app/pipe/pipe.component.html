@@ -1,0 +1,42 @@
+<div class="p-5">
+  <p>{{ "agriculture" | uppercase }}</p>
+  <p>{{ "HOME" | lowercase }}</p>
+
+  <!-- Date-Time formatting -->
+  <p>{{ time | date }}</p>
+  <p>{{ time | date : "short" }}</p>
+  <p>{{ time | date : "long" }}</p>
+  <p>{{ time | date : "full" }}</p>
+  <p>{{ time | date : "shortTime" }}</p>
+  <p>{{ time | date : "longTime" }}</p>
+  <p>{{ time | date : "fullTime" }}</p>
+  <p>{{ time | date : "shortDate" }}</p>
+  <p>{{ time | date : "longDate" }}</p>
+  <p>{{ time | date : "fullDate" }}</p>
+  <p>{{ time | date : "d/M/Y" }}</p>
+
+  <!-- Currency formatting -->
+  <p>{{ 10000 | currency }}</p>
+  <p>{{ 10000 | currency : "EUR" }}</p>
+  <p>{{ 10000 | currency : "NGN" : "symbol-narrow" }}</p>
+  <p>{{ 10000 | currency : "GBP" : "code" }}</p>
+  <p>{{ 10000 | currency : "CNY" }}</p>
+
+  <!-- Index -->
+  <p>{{ "Investment" | slice : 2 : 6 }}</p>
+  <p>{{ "Information" | slice : 0 : 2 }}</p>
+  <p>{{ "Information" | slice : 0 : 4 }}</p>
+  <p>{{ "Information" | slice : 0 : 6 }}</p>
+  <p>{{ "Information" | slice : 2 : 8 }}</p>
+  <p>{{ "Information" | slice : 2 : 5 }}</p>
+  <p>{{ "Information" | slice : 5 : 8 }}</p>
+  <p>{{ "Information" | slice : 9 : 11 }}</p>
+  <p>{{ "Information" | slice : 2 : 6 }}</p>
+  <p>{{ "Information" | slice : 3 : 5 }}</p>
+  <p>{{ "Information" | slice : 6 : 8 }}</p>
+  <p>{{ "Information" | slice : 2 : 11 }}</p>
+  <p>{{ "Information" | slice : 8 : 11 }}</p>
+
+  <!-- Percentage formatting -->
+  <p>{{ 2 / 4 | percent }}</p>
+</div>
